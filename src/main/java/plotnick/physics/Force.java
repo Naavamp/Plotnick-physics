@@ -42,7 +42,6 @@ public class Force
      *
      * @return a new Force proportionate to this force where the magnitude is one
      */
-
     Force normalize()
     {
         double prevMagnitude = getMagnitude();
@@ -56,17 +55,13 @@ public class Force
      *
      * @return a new Force with x and y multipled by scale
      */
-
     Force scale(double scale)
     {
         return new Force(this.x * scale, this.y * scale);
-
     }
-
 
     Force add(Force f)
     {
-
         return new Force(this.x + f.x, this.y + f.y);
     }
 
