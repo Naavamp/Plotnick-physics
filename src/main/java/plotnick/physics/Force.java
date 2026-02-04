@@ -1,32 +1,31 @@
+package plotnick.physics;
+
 public class Force
 {
     private double x;
     private double y;
 
-    public Force(double x, double y) {
+    public Force(double x, double y)
+    {
         this.x = x;
         this.y = y;
     }
 
-    public double getX() {
+    public double getX()
+    {
         return x;
     }
 
-    public void setX(double x) {
-        this.x = x;
-    }
 
-    public double getY() {
+    public double getY()
+    {
         return y;
     }
 
-    public void setY(double y) {
-        this.y = y;
-    }
 
     double getDegrees()
     {
-        double radians = Math.atan2(y,x);
+        double radians = Math.atan2(y, x);
         return Math.toDegrees(radians);
 
     }
@@ -36,22 +35,21 @@ public class Force
         double xsqrd = x * x;
         double ysqrd = y * y;
         return Math.sqrt(xsqrd + ysqrd);
-
-
     }
 
     /**
-     *divide each component by the magnitude and run again
+     * divide each component by the magnitude and run again
+     *
      * @return a new Force proportionate to this force where the magnitude is one
      */
 
     Force normalize()
     {
         double prevMagnitude = getMagnitude();
-        double newX = x/prevMagnitude;
-        double newY = y/prevMagnitude;
+        double newX = x / prevMagnitude;
+        double newY = y / prevMagnitude;
 
-        return new Force (newX, newY);
+        return new Force(newX, newY);
     }
 
     /**

@@ -1,3 +1,5 @@
+package plotnick.physics;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -60,7 +62,7 @@ class ForceTest
         Force normalized = f1.normalize();
 
         //then
-        assertEquals(1,normalized.getMagnitude());
+        assertEquals(1, normalized.getMagnitude());
     }
 
     @Test
