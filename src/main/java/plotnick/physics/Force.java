@@ -53,7 +53,7 @@ public class Force
 
     /**
      *
-     * @return a new Force with x and y multipled by scale
+     * @return a new Force with x and y multiply by scale
      */
     Force scale(double scale)
     {
