@@ -51,6 +51,8 @@ public class Force
         return new Force(newX, newY);
     }
 
+
+
     /**
      *
      * @return a new Force with x and y multiply by scale
