@@ -8,7 +8,7 @@ public class GravityFrame extends JFrame
 
     public GravityFrame()
     {
-        setSize(300,400);
+        setSize(500,500);
         setTitle("Gravity Frame");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -17,6 +17,7 @@ public class GravityFrame extends JFrame
         add(new GravityComponent(), BorderLayout.CENTER);
 
     }
+
     public static void main(String[] args)
     {
         GravityFrame frame = new GravityFrame();

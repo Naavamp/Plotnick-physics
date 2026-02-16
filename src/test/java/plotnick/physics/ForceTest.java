@@ -78,25 +78,27 @@ class ForceTest
         assertEquals(6, scaled.getX());
         assertEquals(8, scaled.getY());
     }
+
     @Test
     void gravity()
     {
         //given
         double x = 0;
         double y = 0;
-        int T = 5;
+        int t = 5;
 
         Force gravity = new Force(0, -9.8);
         Force f1 = new Force(37.0365, 28.9360);
         Force scaledGravity = gravity.scale(0.001);
 
         //when
-        for(double i = 0; i < T; i += 0.001)
+        for (double i = 0; i < t; i += 0.001)
         {
             f1 = f1.add(scaledGravity);
             Force scaledF1 = f1.scale(0.001);
             x += scaledF1.getX();
             y += scaledF1.getY();
+            System.out.println( "(" + x + " , " + y + ")");
         }
 
         //then
