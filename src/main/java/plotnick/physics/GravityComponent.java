@@ -5,6 +5,21 @@ import java.awt.*;
 
 public class GravityComponent extends JComponent
 {
+    private Force force = new Force(37.0365, 28.9360);
+    private double time = 5;
+
+    public void setForce(Force force)
+    {
+        this.force = force;
+        repaint();
+    }
+
+    public void setTime(double time)
+    {
+        this.time = time;
+        repaint();
+    }
+
     @Override
     protected void paintComponent(Graphics g)
     {

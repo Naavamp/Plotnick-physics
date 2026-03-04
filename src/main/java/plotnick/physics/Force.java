@@ -1,5 +1,7 @@
 package plotnick.physics;
 
+import java.util.Objects;
+
 public class Force
 {
     private double x;
@@ -67,4 +69,17 @@ public class Force
         return new Force(this.x + f.x, this.y + f.y);
     }
 
+    @Override
+    public boolean equals(Object o)
+    {
+        if (o == null || getClass() != o.getClass()) return false;
+        Force force = (Force) o;
+        return Double.compare(x, force.x) == 0 && Double.compare(y, force.y) == 0;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(x, y);
+    }
 }
