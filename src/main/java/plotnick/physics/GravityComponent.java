@@ -6,11 +6,13 @@ import java.awt.*;
 public class GravityComponent extends JComponent
 {
     private Force force = new Force(37.0365, 28.9360);
+    private Projectile projectile = new Projectile(force, 0, 0);
     private double time = 5;
 
     public void setForce(Force force)
     {
         this.force = force;
+        projectile = new Projectile(force, 0, 0);
         repaint();
     }
 
@@ -25,25 +27,67 @@ public class GravityComponent extends JComponent
     {
         super.paintComponent(g);
 
+        g.setColor(new Color(150, 200, 255));
+        for (int i = 0; i < getWidth(); i += 20)
+        {
+            g.drawLine(i, 0, i, getHeight());
+        }
+        for (int i = getHeight(); i > 0; i -= 20) //Starting from getHeight, not 0, so lines start on bottom of screen
+        {
+            g.drawLine(0, i, getWidth(), i);
+        }
+
+        g.translate(0, getHeight());
+
+        g.setColor(Color.black);
+
+        projectile.apply(.001);
+        g.drawOval((int) projectile.getX(), (int) -projectile.getY(), 1, 1);
+
+
+        g.setColor(Color.green);
+        g.drawLine(0, 0, (int) force.getX(), (int) -force.getY());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //g.fillOval(200,5 , 10, 10);
 
-        double x = getWidth();
-        double y = getHeight();
-        int T = 5;
+//        double x = getWidth();
+//        double y = getHeight();
+//        int T = 5;
+//
+//        Force gravity = new Force(0, -9.8);
+//        Force f1 = new Force(37.0365, 28.9360);
+//        Force scaledGravity = gravity.scale(0.001);
+//
+//
+//        for(double i = 0; i < T; i += 0.001)
+//        {
+//            f1 = f1.add(scaledGravity);
+//            Force scaledF1 = f1.scale(0.001);
+//            x -= scaledF1.getX() ;
+//            y -= scaledF1.getY()  ;
+//            g.fillOval((int) x , (int) y ,5,5);
 
-        Force gravity = new Force(0, -9.8);
-        Force f1 = new Force(37.0365, 28.9360);
-        Force scaledGravity = gravity.scale(0.001);
-
-
-        for(double i = 0; i < T; i += 0.001)
-        {
-            f1 = f1.add(scaledGravity);
-            Force scaledF1 = f1.scale(0.001);
-            x -= scaledF1.getX() ;
-            y -= scaledF1.getY()  ;
-            g.fillOval((int) x , (int) y ,5,5);
-
-        }
     }
 }
+

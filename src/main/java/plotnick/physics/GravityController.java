@@ -31,7 +31,7 @@ public class GravityController
         gravityComponent.setTime(Double.parseDouble(timeFeild.getText()));
         xFeild.setText(String.valueOf(force.getX()));
         yFeild.setText(String.valueOf(force.getY()));
-        angleLabel.setText("Angle (Degrees) " + force.getDegrees());
+        angleLabel.setText("Angle (Degrees): " + force.getDegrees());
         magnitudeLabel.setText("Magnitude " + force.getMagnitude());
 
     }
