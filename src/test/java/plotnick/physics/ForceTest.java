@@ -66,6 +66,17 @@ class ForceTest
     }
 
     @Test
+    void getApex()
+    {
+        //given
+        Force f1 = new Force(3, 4);
+        //when
+        double apex = f1.getApex();
+        //then
+        assertEquals(6, apex);
+    }
+
+    @Test
     void scale()
     {
         //given

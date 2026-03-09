@@ -23,6 +23,8 @@ public class GravityFrame extends JFrame
         JTextField yField = new JTextField("28.9360");
         final JLabel timeLabel = new JLabel("Time");
         JTextField timeField = new JTextField("5.0");
+        final JLabel ApexLabel = new JLabel("Apex");
+        JTextField apexField = new JTextField(" ");
 
         final JButton button = new JButton("Draw");
 
@@ -32,7 +34,7 @@ public class GravityFrame extends JFrame
         GravityComponent gravityComponent = new GravityComponent();
 
         GravityController gravityController = new GravityController(
-                gravityComponent, xField, yField, timeField, angleLabel, magnitudeLabel);
+                gravityComponent, xField, yField, timeField, angleLabel, magnitudeLabel, ApexLabel);
 
 
         gravityComponent.addMouseListener(new MouseListener()
