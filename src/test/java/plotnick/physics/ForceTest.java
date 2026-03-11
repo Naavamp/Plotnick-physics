@@ -109,7 +109,7 @@ class ForceTest
             Force scaledF1 = f1.scale(0.001);
             x += scaledF1.getX();
             y += scaledF1.getY();
-            System.out.println( "(" + x + " , " + y + ")");
+            System.out.println("(" + x + " , " + y + ")");
         }
 
         //then

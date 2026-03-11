@@ -4,13 +4,13 @@ import javax.swing.*;
 
 public class GravityController
 {
-    GravityComponent gravityComponent;
+    private GravityComponent gravityComponent;
     private JTextField xFeild;
     private JTextField yFeild;
     private JTextField timeFeild;
     private JLabel angleLabel;
     private JLabel magnitudeLabel;
-    private JLabel Apex;
+    private JLabel apexLabel;
 
     public GravityController(GravityComponent gravityComponent, JTextField xFeild, JTextField yFeild, JTextField timeFeild,
                              JLabel angleLabel, JLabel magnitudeLabel, JLabel Apex)
@@ -21,7 +21,7 @@ public class GravityController
         this.timeFeild = timeFeild;
         this.angleLabel = angleLabel;
         this.magnitudeLabel = magnitudeLabel;
-        this.Apex = Apex;
+        this.apexLabel = Apex;
 
 
     }
@@ -35,7 +35,7 @@ public class GravityController
         yFeild.setText(String.valueOf(force.getY()));
         angleLabel.setText("Angle (Degrees): " + force.getDegrees());
         magnitudeLabel.setText("Magnitude " + force.getMagnitude());
-        Apex.setText(String.valueOf(force.getApex()));
+        apexLabel.setText(String.valueOf(force.getApex()));
 
     }
 

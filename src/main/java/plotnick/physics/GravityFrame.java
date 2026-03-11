@@ -135,7 +135,6 @@ public class GravityFrame extends JFrame
         thread.start();
     }
 
-
     public static void main(String[] args)
     {
         GravityFrame frame = new GravityFrame();
