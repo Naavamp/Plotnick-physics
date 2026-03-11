@@ -13,9 +13,7 @@ public class GravityFrame extends JFrame
         setTitle("Gravity Frame");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        setLayout(new BorderLayout());
-
-        add(new GravityComponent(), BorderLayout.CENTER);
+        setLayout(new GridBagLayout());
 
         final JLabel xLabel = new JLabel("Force x");
         JTextField xField = new JTextField("37.0365");
@@ -100,84 +98,90 @@ public class GravityFrame extends JFrame
             }
         });
 
-
-        JPanel westPanel = new JPanel(new GridBagLayout());
         GridBagConstraints  constraints;
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 0;
-        constraints.weightx = 0.5;
-        westPanel.add(new JLabel("ForceX"), constraints);
+        constraints.ipadx = 10;
+        add(new JLabel("ForceX"), constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 0;
-        constraints.weightx = 0.5;
         constraints.fill = GridBagConstraints.HORIZONTAL;
-        westPanel.add((xField), constraints);
+        add((xField), constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 1;
-        westPanel.add(new JLabel("ForceY"), constraints);
+        add(new JLabel("ForceY"), constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 1;
-        westPanel.add((yField), constraints);
+        add((yField), constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 2;
-        westPanel.add(new JLabel("Time"), constraints);
+        add(new JLabel("Time"), constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 2;
-        westPanel.add((timeField), constraints);
+        add((timeField), constraints);
 
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 3;
-        westPanel.add(new JLabel("Angle"), constraints);
+        add(new JLabel("Angle"), constraints);
 
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 3;
-        westPanel.add((angleLabel), constraints);
+        add((angleLabel), constraints);
 
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 4;
-        westPanel.add(new JLabel("Magnitude"), constraints);
+        add(new JLabel("Magnitude"), constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 4;
-        westPanel.add((magnitudeLabel),constraints);
+        add((magnitudeLabel),constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 5;
-        westPanel.add(new JLabel("Apex"), constraints);
+        add(new JLabel("Apex"), constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 5;
-        westPanel.add((ApexLabel), constraints);
+        add((ApexLabel), constraints);
 
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 6;
-        westPanel.add((button), constraints);
+        constraints.anchor = GridBagConstraints.NORTH;
+        add((button), constraints);
 
-        add(westPanel, BorderLayout.WEST);
 
-        add(gravityComponent, BorderLayout.CENTER);
+        constraints = new GridBagConstraints();
+        constraints.gridx = 2;
+        constraints.gridy = 0;
+        constraints.gridheight = 7;
+        constraints.weightx = 1;
+        constraints.weighty = 1;
+        constraints.fill = GridBagConstraints.BOTH;
+
+
+        add(gravityComponent, constraints);
 
 
         Runnable runnable = new Runnable()
