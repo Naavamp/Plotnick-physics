@@ -41,8 +41,9 @@ public class Force
 
     double getApex()
     {
-        double apex = (y * y) / (2 * 9.8);
-        return apex;
+        double apexX = getX() * getY() / 9.8;
+        double apexY = (getY() * getY()) / (2 * -9.8);
+        return apexY;
     }
 
     /**
