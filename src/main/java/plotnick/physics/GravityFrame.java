@@ -34,7 +34,9 @@ public class GravityFrame extends JFrame
         GravityComponent gravityComponent = new GravityComponent();
 
         GravityController gravityController = new GravityController(
-                gravityComponent, xField, yField, timeField, angleLabel, magnitudeLabel, ApexLabel);
+                gravityComponent, xField, yField, timeField,
+                angleLabel, magnitudeLabel, ApexLabel);
+
 
 
         gravityComponent.addMouseListener(new MouseListener()
@@ -131,6 +133,7 @@ public class GravityFrame extends JFrame
             }
 
         };
+
         Thread thread = new Thread(runnable);
         thread.start();
     }

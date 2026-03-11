@@ -25,6 +25,7 @@ public class Projectile
     {
         return y;
     }
+
     public Force getForce()
     {
         return force;

@@ -13,7 +13,7 @@ public class GravityController
     private JLabel apexLabel;
 
     public GravityController(GravityComponent gravityComponent, JTextField xFeild, JTextField yFeild, JTextField timeFeild,
-                             JLabel angleLabel, JLabel magnitudeLabel, JLabel Apex)
+                             JLabel angleLabel, JLabel magnitudeLabel, JLabel apexLabel)
     {
         this.gravityComponent = gravityComponent;
         this.xFeild = xFeild;
@@ -21,7 +21,7 @@ public class GravityController
         this.timeFeild = timeFeild;
         this.angleLabel = angleLabel;
         this.magnitudeLabel = magnitudeLabel;
-        this.apexLabel = Apex;
+        this.apexLabel = apexLabel;
 
 
     }
