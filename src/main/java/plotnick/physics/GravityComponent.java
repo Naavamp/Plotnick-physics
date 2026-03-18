@@ -27,12 +27,14 @@ public class GravityComponent extends JComponent
     {
         super.paintComponent(g);
 
+
+
         g.setColor(new Color(150, 200, 255));
         for (int i = 0; i < getWidth(); i += 20)
         {
             g.drawLine(i, 0, i, getHeight());
         }
-        for (int i = getHeight(); i > 0; i -= 20) //Starting from getHeight, not 0, so lines start on bottom of screen
+        for (int i = getHeight(); i > 0; i -= 20)
         {
             g.drawLine(0, i, getWidth(), i);
         }
@@ -42,12 +44,20 @@ public class GravityComponent extends JComponent
         g.setColor(Color.black);
 
         projectile.apply(.001);
-        g.drawOval((int) projectile.getX(), (int) - projectile.getY(), 1, 1);
 
-        g.drawOval((int) getX(),(int) force.getApex(), 5 , 5);
 
-        g.setColor(Color.green);
+        g.drawOval((int) projectile.getX() , (int) -projectile.getY(), 1, 1);
+
+        double apexX = projectile.getApexX();
+        double apexY = projectile.getApexY();
+
+        g.setColor(Color.RED);
+        g.drawOval((int) apexX, (int) -apexY, 5, 5);
+
+        // Force vector
+        g.setColor(Color.BLACK);
         g.drawLine(0, 0, (int) force.getX(), (int) - force.getY());
+
 
     }
 }

@@ -41,5 +41,13 @@ public class Projectile
 
     }
 
+    public double getApexY() {
+        return (getY() * getY()) / (2 * 9.8);  // always positive
+    }
+
+    public double getApexX() {
+        return (getX() * getY()) / 9.8;
+    }
+
 
 }
