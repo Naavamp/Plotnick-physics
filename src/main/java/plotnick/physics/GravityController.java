@@ -29,15 +29,18 @@ public class GravityController
     public void updateForce(double x, double y)
     {
         Force force = new Force(x,y);
+        Projectile projectile = new Projectile(force, x, y);
         gravityComponent.setForce(force);
         gravityComponent.setTime(Double.parseDouble(timeFeild.getText()));
         xFeild.setText(String.valueOf(force.getX()));
         yFeild.setText(String.valueOf(force.getY()));
         angleLabel.setText(String.valueOf(force.getDegrees()));
         magnitudeLabel.setText(String.valueOf(force.getMagnitude()));
-        apexLabel.setText(String.valueOf(force.getApex()));
+        apexLabel.setText(String.valueOf(projectile.getApexY()));
 
     }
+
+
 
 
 }

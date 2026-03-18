@@ -39,12 +39,9 @@ public class Force
         return Math.sqrt(xsqrd + ysqrd);
     }
 
-    double getApex()
-    {
-        double apexX = getX() * getY() / 9.8;
-        double apexY = (getY() * getY()) / (2 * -9.8);
-        return apexY;
-    }
+
+
+
 
     /**
      * divide each component by the magnitude and run again
